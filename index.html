@@ -147,7 +147,9 @@
 
 
 
-
+  <div id="lightbox" onclick="lightboxClose();">
+    <img id="lightboxImage">
+  </div>
   <!-- Carousel
     ================================================== -->
   <div id="homeCarousel" class="carousel slide carousel-home" data-ride="carousel">
@@ -422,8 +424,9 @@
 
           <div class="cause">
 
-              <img src="assets/images/causes/cause-hunger.jpg"
-                  alt="" class="cause-img">
+            <div class="col-icon-wrapper" onclick="lightboxOpen('assets/images/causes/cause-hunger.jpg');">
+              <img src="assets/images/causes/cause-hunger.jpg" alt="" class="cause-img">
+            </div>
 
               <div class="progress cause-progress">
                   <div class="progress-bar" role="progressbar"
@@ -462,10 +465,10 @@
 
           <div class="cause">
 
-              <img
-                  src="assets/images/causes/cause-education.jpg"
-                  alt="" class="cause-img">
-
+            
+                  <div class="col-icon-wrapper" onclick="lightboxOpen('assets/images/causes/cause-education.jpg');">
+                    <img src="assets/images/causes/cause-education.jpg" alt="" class="cause-img">
+                  </div>
               <div class="progress cause-progress">
                   <div class="progress-bar" role="progressbar"
                       aria-valuenow="60" aria-valuemin="0"
@@ -501,10 +504,9 @@
         <div class="col-md-3 col-sm-6">
 
           <div class="cause">
-
-              <img src="assets/images/causes/cause-rights.jpg"
-                  alt="" class="cause-img">
-
+                  <div class="col-icon-wrapper" onclick="lightboxOpen('assets/images/causes/cause-rights.jpg');">
+                    <img src="assets/images/causes/cause-rights.jpg" alt="" class="cause-img">
+                  </div>
               <div class="progress cause-progress">
                   <div class="progress-bar" role="progressbar"
                       aria-valuenow="40" aria-valuemin="0"
@@ -545,10 +547,10 @@
 
           <div class="cause">
 
-              <img
-                  src="assets/images/causes/cause-culture.jpg"
-                  alt="" class="cause-img">
-
+             
+                  <div class="col-icon-wrapper" onclick="lightboxOpen('aassets/images/causes/cause-culture.jpg');">
+                    <img src="assets/images/causes/cause-culture.jpg" alt="" class="cause-img">
+                  </div>
               <div class="progress cause-progress">
                   <div class="progress-bar" role="progressbar"
                       aria-valuenow="60" aria-valuemin="0"
@@ -856,7 +858,7 @@
         </div>
       </div>
     </div>
-
+   
   </div> <!-- /.modal -->
 
 
@@ -887,6 +889,17 @@
         r.parentNode.insertBefore(e, r)
       }(window, document, 'script', 'ga'));
     ga('create', 'UA-XXXXX-X'); ga('send', 'pageview');
+  </script>
+  <script>
+    function lightboxOpen(imageUrl) {
+      console.log(imageUrl);
+      document.getElementById('lightbox').style.display = 'block';
+      document.getElementById('lightboxImage').src = imageUrl;
+  }
+  
+  function lightboxClose() {
+      document.getElementById('lightbox').style.display = 'none';
+  }
   </script>
 </body>
 
